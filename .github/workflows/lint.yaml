@@ -17,6 +17,7 @@ jobs:
         with:
           strict: high
           source: "source"
+          mypy-options: "--ignore-missing-imports --show-error-codes"
           pylint-options: false
           isort-options: false
           django: false

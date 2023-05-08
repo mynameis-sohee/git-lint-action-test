@@ -1,30 +1,25 @@
-name: Check Python Lint
+name: Python lint
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
-
     steps:
-      #pylint, mypy, black, isort linting
-      - name: Python Linter
-        uses: ricardochaves/python-lint@master
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          use-black: true
-          use-pylint: false
-          use-pycodestyle: false
-          use-flake8: false
-          use-mypy: false
-          use-isort: false
-          extra-pylint-options: ""
-          extra-pycodestyle-options: ""
-          extra-flake8-options: ""
-          extra-black-options: ""
-          extra-mypy-options: ""
-          extra-isort-options: ""
-          
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install black
+
+      - name: Lint Python files
+        run: black --check .
+

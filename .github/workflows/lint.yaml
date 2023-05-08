@@ -1,0 +1,19 @@
+name: Check Python Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      #pylint, mypy, black, isort linting
+      - name: Python Linter
+        uses: sunnysid3up/python-linter@master
+        with:
+          strict: high
+          black-options: true

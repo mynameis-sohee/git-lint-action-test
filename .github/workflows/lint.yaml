@@ -17,7 +17,6 @@ jobs:
         with:
           strict: high
           source: "source"
-          mypy-options: false
           pylint-options: false
           isort-options: false
           django: false

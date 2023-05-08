@@ -16,5 +16,8 @@ jobs:
         uses: sunnysid3up/python-linter@master
         with:
           strict: high
-          source: "src"
+          mypy-options: false
+          pylint-options: false
+          isort-options: false
+          django: false
           black-options: true

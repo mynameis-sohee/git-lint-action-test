@@ -15,7 +15,7 @@ jobs:
       - name: Python Linter
         uses: ricardochaves/python-lint@master
         with:
-          python-root-list: "git_lint_action_test"
+          python-root-list: "src"
           use-black: true
           use-pylint: false
           use-pycodestyle: false

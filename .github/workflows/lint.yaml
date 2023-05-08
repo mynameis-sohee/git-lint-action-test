@@ -16,9 +16,5 @@ jobs:
         uses: sunnysid3up/python-linter@master
         with:
           strict: high
-          source: "source"
-          mypy-options: "--ignore-missing-imports --show-error-codes"
-          pylint-options: false
-          isort-options: false
-          django: false
+          source: "git-lint-action-test"
           black-options: true
